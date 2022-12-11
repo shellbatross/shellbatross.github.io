@@ -1,4 +1,4 @@
 [ZoneTransfer]
 ZoneId=3
-ReferrerUrl=http://127.0.0.1:8888/lab/tree/notebooks/Untitled_15.ipynb
-HostUrl=http://127.0.0.1:8888/nbconvert/html/notebooks/Untitled_15.ipynb?download=true
+ReferrerUrl=http://127.0.0.1:8888/lab/tree/notebooks/index.ipynb
+HostUrl=http://127.0.0.1:8888/nbconvert/html/notebooks/index.ipynb?download=true
