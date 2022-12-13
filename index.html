@@ -7,6 +7,7 @@
 
 
 
+
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -14564,8 +14565,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>I love visiting North Carolina every summer, my family lives very close to the Ocean close to the intracoastal area and we regularly go out fishing as a pastime. However, ocean fishing has felt relatively inconsistent over the years, regardless of whether we fish from a pier or if we fish from a boat. Thankfully for us, the NOAA surveys anglers when they come back from their fishing trips and has publicized the information. Using their data, we will analyze trends in the data and use Machine Learning algorithms to predict whether this year's fishing will improve, and by how much, and what would be the best time to go fish to enjoy this year's summer fishing season.</p>
-<b>Hi justin this is a fish (== >( o > o )></b>
+<p>Fishing Statistics in North Carolina</p>
+<p>Stephanie Albornoz, Justin Tung</p>
+
+</div>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Both of us enjoy fishing to a certain degree, Stephanie loves visiting North Carolina every summer, her family lives very close to the Ocean close to the intracoastal area and she regularly goes out fishing with her family as a pastime and Justin goes out fishing with his family occasionally during breaks from school. One thing that we have noticed is the inconsistency when we go out fishing, the range of fish we've caught over multiple trips ranges from 0 all the way up to 13. We wanted to understand a little more about the inconsistency and find out potential factors that affected our success (or lack of). These factors included things like: fishing experience, weather, time, method of fishing, etc.</p>
+<p>Thankfully for us, the National Oceanic and Atmospheric Administration (NOAA) surveys anglers when they come back from their fishing trips and has publicized the information. Their survey includes lots of data on the factors that we wanted to explore about fishing that we mentioned above.</p>
+<p>In our tutorial, we will be analyzing the data provided by the NOAA. We will be observing how different factors affect fishing success, analyzing certain trends in the data and using Machine Learning algorithms to predict whether this year's fishing will improve, and by how much, and what would be the best time to go fish to enjoy this year's summer fishing season.</p>
+
 </div>
 </div>
 </div>
@@ -14581,7 +14593,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[475]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -14606,7 +14618,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Introduction to our Data:</p>
 <p>We are going to be using one of the NOAA Fisheries official recreational fishing data sets, the data set variables and naming conventions can be pretty confusing, so here is an overlook:</p>
-<p>We will be using one of the Trip-Level Data sets, which has records of an angler trip interview. The naming conventions of the Trip-Level Data sets use TRIP_YYYYW, where YYYY is the year, and "W" is the "Wave". For the NOAA, the "Wave" is a 2 month sampling period. Because summer break for most colleges is mid May to late August, we will be using TRIP_20214, TRIP20204, TRIP20194, TRIP20184. This means we will be using wave 4, which contains the months of July/August, of the most recent entries in the dataset from 2018 through 2021.</p>
+<p>We will be using one of the Trip-Level Data sets, which has records of an angler trip interview. The naming conventions of the Trip-Level Data sets use TRIP_YYYYW, where YYYY is the year, and "W" is the "Wave". For the NOAA, the "Wave" is a 2 month sampling period. Because summer break for most colleges is mid May to late August, we will be using TRIP_20214, TRIP20204, TRIP20194, TRIP20184. This means we will be using wave 4, which contains the months of July/August, of the most recent entries in the dataset from 2018 through 2021. This will also help us since there are a massive amount of entries in the dataset, so specifying certain aspects will allow us to focus more on what we wanted to learn.</p>
 
 </div>
 </div>
@@ -14614,8 +14626,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Cleaning and getting our data:</p>
-<p>First we will read all the csv files of angler trip surveys performed from 2018-2021 during the months of July/August and put each into a dataframe for cleaning.</p>
+<p>Cleaning and Getting Our Data:</p>
+<p>First we will read all the CSV files of angler trip surveys performed from 2018-2021 during the months of July/August and put each into a dataframe for cleaning.</p>
 
 </div>
 </div>
@@ -14624,7 +14636,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[476]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp_full_df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./trip_20213.csv&#39;</span><span class="p">,</span> <span class="n">low_memory</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
@@ -14642,7 +14654,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Then we will edit the temporary dataframes of each year so they only include the data for ocean fishing in the North Carolina area (NC_AREA),and keep only the data relevant to us:</p>
+<p>Then we will edit the temporary dataframes of each year so they only include the data for ocean fishing in the North Carolina area (NC_AREA). We chose to focus on North Carolina since Stephanie has more fishing experience and could potentially relate to the data a bit more. To keep only the data relevant to us, we run this code:</p>
 
 </div>
 </div>
@@ -14651,7 +14663,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[477]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp_full_df1</span> <span class="o">=</span> <span class="n">tmp_full_df1</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;AREA_NC&#39;</span><span class="p">])</span>
@@ -14679,8 +14691,24 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Since a person can fish for several hours and catch a very small amount of fish or none, while another one can fish for a very short amount of time and catch a lot of fish, for each dataframe we will add another column to measure how "successful" each angler's trip was.
-In this tutorial, we will determine success as the amount of fish catched divided by the amount of hours spent to catch said fish, so catching the most amount of fish over the least amount of time implies a higher "success" fishing trip.</p>
+<p>In our dataframes above, we have 8 columns of data. We keep track of:</p>
+<p>Catch:</p>
+<p>HRSF:</p>
+<p>Kod:</p>
+<p>Time:</p>
+<p>Gear:</p>
+<p>Mode_F:</p>
+<p>FFDAYS12:</p>
+<p>Year:</p>
+
+</div>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>As we mentioned earlier, fishing is a very inconsistent sport, at least for people who fish casually. Sometimes a person can fish for several hours and catch nothing while another person can fish for a short period of time and catch multiple fish. As a result, the dataset is filled with many entries where people have varying amounts of fish caught. We want to be able to compare the success of different fisherman, even if they fished for different amounts of time. To do this, we will add a new column to each dataframe, and with that column we can see how "successful" an angler was compared to another.</p>
+<p>In this tutorial, we will determine success as the amount of fish catched divided by the amount of hours spent to catch said fish, so catching the most amount of fish over the least amount of time implies a higher "success" fishing trip.</p>
 
 </div>
 </div>
@@ -14689,7 +14717,7 @@ In this tutorial, we will determine success as the amount of fish catched divide
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[478]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp_full_df1</span><span class="p">[</span><span class="s2">&quot;succ_hr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_full_df1</span><span class="p">[</span><span class="s2">&quot;CATCH&quot;</span><span class="p">]</span><span class="o">/</span> <span class="n">tmp_full_df1</span><span class="p">[</span><span class="s2">&quot;HRSF&quot;</span><span class="p">]</span>
@@ -14707,7 +14735,7 @@ In this tutorial, we will determine success as the amount of fish catched divide
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now we have to think how we are going to compare how successful the anglers' trips were, and as much as we would like to include all entries, there are simply too many entries each year.</p>
+<p>We are now able to compare how successful each of the anglers' trips were, but we have a new issue to think about. Our dataset is too large to work with, we have too many entries. As much as we would like to include all the entries in the dataset for accuracy, there are simply too many entries each year for us to work with.</p>
 
 </div>
 </div>
@@ -14716,7 +14744,7 @@ In this tutorial, we will determine success as the amount of fish catched divide
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[479]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In fact each of the temporary dataframes sizes are&quot;</span><span class="p">)</span>
@@ -14756,7 +14784,7 @@ In this tutorial, we will determine success as the amount of fish catched divide
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For the sake of optimism, we will narrow down our analysis to the most successful fishing trips and ignore any entries that could not be computed from a missing hours fished value. For each dataframe we will only grab the top 1000 performers, with all of their entries at that index together and merge them into a dataframe for the years 2018-2021.</p>
+<p>To combat our problem and for the sake of optimism, we will narrow down our analysis to the most successful fishing trips and ignore any entries that could not be computed from a missing hours fished value. Furthermore, for each dataframe we will only grab the top 1000 performers, with all of their entries at that index together and merge them into a dataframe for the years 2018-2021. This way we will have a much more manageable dataset to work with.</p>
 
 </div>
 </div>
@@ -14765,7 +14793,7 @@ In this tutorial, we will determine success as the amount of fish catched divide
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[480]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp_full_df1</span><span class="p">,</span><span class="n">tmp_full_df2</span><span class="o">=</span> <span class="n">tmp_full_df1</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;succ_hr&#39;</span><span class="p">]),</span><span class="n">tmp_full_df2</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;succ_hr&#39;</span><span class="p">])</span>
@@ -14799,7 +14827,7 @@ In this tutorial, we will determine success as the amount of fish catched divide
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[480]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
 
 
 
@@ -14991,7 +15019,7 @@ In this tutorial, we will determine success as the amount of fish catched divide
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[481]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nc_df</span> <span class="o">=</span> <span class="n">nc_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;CATCH&#39;</span><span class="p">:</span><span class="s1">&#39;num_catched&#39;</span><span class="p">,</span><span class="s1">&#39;HRSF&#39;</span><span class="p">:</span><span class="s1">&#39;hrs_fished&#39;</span><span class="p">,</span>
@@ -15052,7 +15080,7 @@ People have long debated skill versus luck in the sport of fishing. With our dat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[482]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nc_df</span><span class="p">[</span><span class="s1">&#39;days_fished&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nc_df</span><span class="p">[</span><span class="s1">&#39;days_fished&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="mf">998.0</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
@@ -15118,7 +15146,7 @@ People have long debated skill versus luck in the sport of fishing. With our dat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[483]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -15179,7 +15207,7 @@ People have long debated skill versus luck in the sport of fishing. With our dat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[484]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">curr_success</span> <span class="o">=</span> <span class="p">[]</span>
@@ -15234,7 +15262,7 @@ People have long debated skill versus luck in the sport of fishing. With our dat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[485]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">curr_success</span> <span class="o">=</span> <span class="p">[]</span>
@@ -15289,7 +15317,7 @@ People have long debated skill versus luck in the sport of fishing. With our dat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[492]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">curr_success</span> <span class="o">=</span> <span class="p">[]</span>
@@ -15344,7 +15372,7 @@ People have long debated skill versus luck in the sport of fishing. With our dat
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[487]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">curr_success</span> <span class="o">=</span> <span class="p">[]</span>
@@ -15408,7 +15436,7 @@ take the angler around 2.5 hours to catch one fish.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[506]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">nc_df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -15498,7 +15526,8 @@ strong multicollinearity or other numerical problems.
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Since the P-Value in the Linear Regression is 0, we can reject the null hypothesis. [Null Hypothesis]</p>
+<p>As a reminder, our null hypothesis is that there is a relation between years and the success rate of anglers. Since the P-Value in the Linear Regression is 0, we can reject the null hypothesis, meaning that there is indeed a relation between the year anglers fished and their success.</p>
+<p>This finding is meaningful for our own hypothesis as well. We can now say that based on data, there is a relation between our success and the time we fished.</p>
 
 </div>
 </div>
@@ -15507,7 +15536,7 @@ strong multicollinearity or other numerical problems.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[489]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nc_df</span><span class="p">[</span><span class="s2">&quot;starting_time&quot;</span><span class="p">]</span>
