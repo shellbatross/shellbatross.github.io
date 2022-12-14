@@ -1,4 +1,3 @@
 [ZoneTransfer]
 ZoneId=3
-ReferrerUrl=http://127.0.0.1:8888/lab/tree/notebooks/index.ipynb
-HostUrl=http://127.0.0.1:8888/files/notebooks/index.ipynb?_xsrf=2%7C5942ef61%7C807f0b575e163306dd70ebc23f759230%7C1666814258
+HostUrl=https://cdn.discordapp.com/attachments/888944328397946960/1052675106037571634/index_1.ipynb
